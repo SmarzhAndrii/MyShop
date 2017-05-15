@@ -1,0 +1,8 @@
+{% extends "@MyShopDefault/layout.html.twig" %}
+
+{% block body %}
+    <h2>{{ product.model }}</h2>
+    <b>{{ product.price }}</b></br>
+    <b>{{ product.description }}</b></br>
+    date:{{ product.datecreatedat.format("d.m.Y H:i:s") }}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "@MyShopDefault/layout.html.twig" %}
+
+{% block body %}
+	<h2>Product List</h2>
+	<div class="row">
+	    {% for product in productList %}
+
+			<div class="col-sm-4 col-lg-4 col-md-4">
+				<div class="thumbnail">
+					<img src="http://placehold.it/320x150" alt="">
+					<div class="caption">
+						<h4 class="pull-right">{{ product.price }}$</h4>
+						<h4><a href="{{ path("myshop.product_info",{id:product.id}) }}"> {{ product.model }}</a></h4>
+						<p>{{ product.description }} </br> <a href="{{ path("myshop.product_info",{id:product.id}) }}">Show product details</a></p>
+					</div>
+					<div class="ratings">
+						<p class="pull-right">{{ product.dateCreatedAt.format("d.m Y  H:i:s") }}</p>
+					</div>
+				</div>
+			</div>
+	    {% else %}
+	    	No products!
+	    {% endfor %}
+	</div>
+{% endblock %}
